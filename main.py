@@ -8,6 +8,10 @@ def main():
     err_counter = 0
     mode = "start_game"
     guessed_letters = set()
+    idx = 1
+
+    print("****** STEP", idx, "******")
+    idx += 1
 
     while err_counter < 7:
         if mode == "start_game":
@@ -16,12 +20,16 @@ def main():
             mode = "replace_letter"
         else:
             user = input("Enter a letter: ")
-            print("***********")
+            print("")
+            print("****** STEP", idx, "******")
+            idx += 1
 
             while len(user) != 1:
                 print("Too many letters. Please insert just one letter.")
                 user = input("Enter a letter: ")
-                print("***********")
+                print("")
+                print("****** STEP", idx, "******")
+                idx += 1
 
             if verify_user_letter(random_word, user, guessed_letters):
                 if verify_middle_letters(random_word, user):
@@ -33,6 +41,7 @@ def main():
                 err_counter += 1
             
             display(draw_man[err_counter], user_word)
+            
 
             if err_counter == 6:
                 print("YOU LOSE! The word was:", random_word)
