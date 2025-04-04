@@ -1,3 +1,5 @@
+import string
+
 draw_man = {0: ("   ",
                 "   ",
                 "   "),
@@ -22,3 +24,5 @@ draw_man = {0: ("   ",
 
 fruits = ("bananas","strawberries","grapes","apples","watermelon","oranges","blueberries","lemons","peaches","pineapple",
 	"potatoes","tomatoes","onions","carrots","broccoli","cucumbers","lettuce","mushrooms","garlic","asparagus")
+
+alphabet = list(string.ascii_lowercase)
